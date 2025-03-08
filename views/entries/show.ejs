@@ -1,11 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Entry Show Page</title>
+    <title>
+        <%= entry.title %>
+    </title>
 </head>
+
 <body>
-    <h1>Here is your entry</h1>
+    <h1>
+        <%= entry.title %>
+    </h1>
+    <nav>
+        <ul>
+            <li>
+                <a href="/entries">Back to Entries</a>
+            </li>
+        </ul>
+    </nav>
+        <article>
+            <p><strong>Date: </strong>
+                <%= entry.date %>
+            </p>
+            <p>Mood: <%= entry.mood%>
+            </p>
+            <%= entry.content %>
+        </article>
+    <form action="/entries/<%= entry._id%>?_method=DELETE" method="POST">
+        <button type="submit">Delete <%= entry.title %></button>
+    </form>
 </body>
+
 </html>
