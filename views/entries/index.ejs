@@ -7,12 +7,18 @@
     <title>Entries Index</title>
 </head>
 <a href=""></a>
+
 <body>
     <h1>All Entries</h1>
+    <nav>
+        <ul>
+            <li><a href="/entries/new">Create New Blog Entry</a></li>
+        </ul>
+    </nav>
     <ul>
         <% entries.forEach(entry=> { %>
             <li><a href="/entries/<%= entry._id %>">><%= entry.title %></a></li>
-                <% }); %>
+            <% }); %>
     </ul>
 </body>
 

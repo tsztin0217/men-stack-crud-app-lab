@@ -27,10 +27,15 @@ app.get("/entries/new", (req, res) => {
     res.render("entries/new.ejs");
 });
 
-app.post("/entries", async(req, res) => {
+app.post("/entries", async (req, res) => {
     console.log(req.body);
     await Entry.create(req.body);
     res.redirect("/entries");
+});
+
+app.get("/entries/:entryId", async (req, res) => {
+    const foundEntry = await Entry.findById(req.params.entryId);
+    res.render("entries/show.ejs", { entry: foundEntry });
 });
 
 app.listen(3000, () => {
