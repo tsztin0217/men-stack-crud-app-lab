@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create an Entry</title>
+</head>
+
+<body>
+    <h1>Create a New Blog Entry!</h1>
+    <div>
+        <form action="/entries" method="POST">
+            <fieldset aria-labelledby="entry-details">
+                <legend id="entry-details">Blog Entry Details</legend>
+                <div>
+                <Label for="title">Title: </Label>
+                <input type="text" name="title" id="title" required />
+                </div>
+
+                <div>
+                <label for="date">Date: </label>
+                <input type="date" name="date" id="date" required />
+                </div>
+
+                <div>
+                <label for="mood">Mood: </label>
+                <select name="mood" id="mood" required>
+                    <option value="happy">😊</option>
+                    <option value="sad">😢</option>
+                    <option value="angry">😡</option>
+                    <option value="discouraged">😞</option>
+                    <option value="tired">😵</option>
+                </select>
+                </div>
+            </fieldset>
+
+            <fieldset aria-labelledby="content">
+                <legend id="content">Blog Content</legend>
+                <div>
+                    <label for="content">Content: </label>
+                    <textarea name="content" id="content" rows="10" required></textarea>
+                </div>
+            </fieldset>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>

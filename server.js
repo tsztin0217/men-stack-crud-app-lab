@@ -8,11 +8,15 @@ mongoose.connection.on("connected", () => {
     console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
   });
   
-
+const Entry = require("./models/entry.js");
 
 app.get("/", async(req, res) => {
     res.render("index.ejs");
 })
+
+app.get("/entries/new", (req, res) => {
+    res.render("entries/new.ejs");
+});
 
 app.listen(3000, () => {
     console.log('Listening on port 3000');
