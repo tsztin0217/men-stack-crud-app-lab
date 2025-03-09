@@ -46,6 +46,11 @@ app.get("/entries/:entryId/edit", async (req, res) => {
     });
 });
 
+app.put("/entries/:entryId", async (req, res) => {
+    await Entry.findByIdAndUpdate(req.params.entryId, req.body);
+    res.redirect(`/entries/${req.params.entryId}`);
+})
+
 app.get("/entries/:entryId", async (req, res) => {
     const foundEntry = await Entry.findById(req.params.entryId);
     res.render("entries/show.ejs", { entry: foundEntry });
