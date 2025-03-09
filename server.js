@@ -39,6 +39,13 @@ app.post("/entries", async (req, res) => {
     res.redirect("/entries");
 });
 
+app.get("/entries/:entryId/edit", async (req, res) => {
+    const foundEntry = await Entry.findById(req.params.entryId);
+    res.render("entries/edit.ejs", {
+        entry: foundEntry
+    });
+});
+
 app.get("/entries/:entryId", async (req, res) => {
     const foundEntry = await Entry.findById(req.params.entryId);
     res.render("entries/show.ejs", { entry: foundEntry });
