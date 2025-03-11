@@ -9,8 +9,21 @@
 </head>
 
 <body>
-    <h1>Welcome to my blog!</h1>
-    <p>A place where I share my daily thoughts.</p>
+    <% if (user) { %>
+        <h1>Welcome to the app, <%= user.username %>!</h1>
+        <p>
+            <a href="/auth/sign-out">Sign out</a>
+        </p>
+        <% } else { %>
+            <h1>Welcome to the app, guest.</h1>
+            <p>
+                <a href="/auth/sign-up">Sign up</a> or <a href="/auth/sign-in">sign in</a>.
+            </p>
+            <% } %>
+                <p>
+                    <a href="/vip-lounge">Get into the VIP Users Only lounge!</a>
+                </p>
+
     <nav>
         <ul>
             <li>
@@ -19,9 +32,7 @@
             <li>
                 <a class="index-link" href="/entries/new">Create New Entry</a>
             </li>
-            <li>
-                <a class="index-link" href="/auth/sign-up">Sign up</a>
-            </li>
+
         </ul>
     </nav>
 </body>
