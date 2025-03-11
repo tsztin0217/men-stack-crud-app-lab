@@ -6,6 +6,9 @@ const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 const morgan = require("morgan");
 
+const port = process.env.PORT ? process.env.PORT : "3000";
+const authController = require("./controllers/auth.js");
+
 mongoose.connect(process.env.MONGODB_URI);
 mongoose.connection.on("connected", () => {
     console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
@@ -14,6 +17,7 @@ mongoose.connection.on("connected", () => {
 app.use(express.urlencoded({ extended: false })); // body parser middleware
 app.use(methodOverride("_method"));
 app.use(morgan("dev"));
+app.use(express.static("public"));
 
 const Entry = require("./models/entry.js");
 
@@ -21,6 +25,9 @@ app.get("/", async (req, res) => {
     const allEntries = await Entry.find();
     res.render("index.ejs");
 })
+
+app.use("/auth", authController);
+
 
 app.get("/entries", async (req, res) => {
     const allEntries = await Entry.find();
@@ -61,6 +68,6 @@ app.delete("/entries/:entryId", async (req, res) => {
     res.redirect("/entries");
 });
 
-app.listen(3000, () => {
-    console.log('Listening on port 3000');
+app.listen(port, () => {
+    console.log(`Listening on port ${port}`);
 });

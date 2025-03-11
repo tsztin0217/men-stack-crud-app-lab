@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Darumadrop+One&family=Rochester&family=Single+Day&display=swap');
+
+body {
+    background: #97a4f0;
+    font-family: "Single Day", sans-serif;
+    display: flex;
+    font-size: 30px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    color: rgb(6, 30, 93);
+    text-align: center;
+}
+
+
+input:invalid,
+textarea:invalid {
+    border: 1px solid red;
+}
+
+form {
+    font-family: "Single Day", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #d2bdf2;
+    padding: 20px 30px;
+    border: dashed rgb(113, 158, 255) 3px;
+    border-radius: 10px;
+    box-shadow: 5px 6px #ffffff;
+    margin: 20px 10px;
+}
+
+button {
+    align-self: center;
+    margin: 10px 4px 4px 4px;
+    background-color: #efdff3;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    border: dashed;
+    width: 15em;
+}
+
+
+
+textarea {
+    width: 100%;
+    /* Makes it take the full width of its container */
+    font-size: 15px;
+    /* Increases the text size for better readability */
+    padding: 10px;
+    /* Adds space inside the textarea */
+    /* resize: vertical; Allows users to resize only vertically */
+}
+
+a:hover,
+button:hover {
+    box-shadow: 1px 1px 35px rgb(247, 153, 229);
+    /* Purple glow */
+    transform: scale(1.10);
+    text-shadow: 0 0 30px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.953), 10px 10px 30px rgb(253, 253, 253);
+}
+
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
