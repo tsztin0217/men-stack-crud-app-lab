@@ -40,6 +40,18 @@
                     <option value="😞">😵</option>
                 </select>
                 </div>
+                <label>Select Categories:</label><br>
+
+<!-- Predefined categories -->
+<input type="checkbox" name="categories" value="Tech"> Tech  
+<input type="checkbox" name="categories" value="Lifestyle"> Lifestyle  
+<input type="checkbox" name="categories" value="Travel"> Travel  
+
+<!-- Custom category input -->
+<input type="checkbox" id="customCategoryCheckbox" onclick="toggleCustomInput()">  
+<label for="customCategoryCheckbox">Other</label>  
+<input type="text" id="customCategoryInput" name="customCategory" placeholder="Enter custom category">
+
             </fieldset>
             <div class="content-box">
             <fieldset aria-labelledby="content">

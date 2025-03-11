@@ -59,7 +59,20 @@ app.get("/entries/new", (req, res) => {
 
 app.post("/entries", async (req, res) => {
     console.log(req.body);
-    await Entry.create(req.body);
+    let categories = req.body.categories || []; // Get selected checkboxes
+
+    // If user added a custom category, include it
+    if (req.body.customCategory) {
+        categories.push(req.body.customCategory);
+    }
+
+    await Entry.create({
+        title: req.body.title,
+        date: req.body.date,
+        mood: req.body.mood,
+        content: req.body.content,
+        categories: categories, // Save multiple categories as an array
+    });
     res.redirect("/entries");
 });
 

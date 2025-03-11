@@ -28,6 +28,11 @@
             </p>
             <p>Mood: <%= entry.mood%>
             </p>
+            <p>Categories:
+                <% entry.categories.forEach(category => { %>
+                    <span class="category-badge"><%= category %></span>
+                <% }); %>
+            </p>
             <%= entry.content %>
         </article>
     </div>

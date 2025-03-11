@@ -17,7 +17,7 @@
             </li>
         </ul>
     </nav>
-    <form action="/entries/<%= entry._id %>?_method=PUT" method="POST">
+    <form class="entry-details" action="/entries/<%= entry._id %>?_method=PUT" method="POST">
         <fieldset class="entry-details" aria-labelledby="entry-details">
             <legend id="entry-details">Blog Entry Details</legend>
             <div>
@@ -41,19 +41,29 @@
                     <option value="😞" <%=entry.mood==="😞" ? "selected" : "" %>>😵</option>
                 </select>
             </div>
+            <label>Select Categories:</label><br>
+
+            <input type="checkbox" name="categories" value="Tech"> Tech
+            <input type="checkbox" name="categories" value="Lifestyle"> Lifestyle
+            <input type="checkbox" name="categories" value="Travel"> Travel
+
+            <input type="checkbox" id="customCategoryCheckbox" onclick="toggleCustomInput()">
+            <label for="customCategoryCheckbox">Other</label>
+            <input type="text" id="customCategoryInput" name="customCategory" placeholder="Enter custom category">
         </fieldset>
         <div class="content-box">
             <fieldset aria-labelledby="content">
                 <legend id="content">Blog Content</legend>
                 <div>
-                    <label for="content">Content: </label><br>
+                    <label for="content">Content: </label>
                     <textarea name="content" id="content" rows="10" required><%= entry.content %></textarea>
                 </div>
+               
             </fieldset>
 
             <button type="submit">Submit</button>
-        </div>
     </form>
+    </div>
     </div>
 </body>
 
