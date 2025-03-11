@@ -43,13 +43,10 @@
             </div>
             <label>Select Categories:</label><br>
 
-            <input type="checkbox" name="categories" value="Tech"> Tech
-            <input type="checkbox" name="categories" value="Lifestyle"> Lifestyle
-            <input type="checkbox" name="categories" value="Travel"> Travel
+            <input type="checkbox" name="categories" value="Tech" <% if (entry.categories) { %>checked<% } %>> Tech
+            <input type="checkbox" name="categories" value="Lifestyle" <% if (entry.categories)  { %>checked<% } %>> Lifestyle
+            <input type="checkbox" name="categories" value="Travel" <% if (entry.categories)  { %>checked<% } %>> Travel
 
-            <input type="checkbox" id="customCategoryCheckbox" onclick="toggleCustomInput()">
-            <label for="customCategoryCheckbox">Other</label>
-            <input type="text" id="customCategoryInput" name="customCategory" placeholder="Enter custom category">
         </fieldset>
         <div class="content-box">
             <fieldset aria-labelledby="content">
