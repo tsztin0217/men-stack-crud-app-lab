@@ -17,42 +17,43 @@
             </li>
         </ul>
     </nav>
-    <div>
-        <form action="/entries/<%= entry._id %>?_method=PUT" method="POST">
-            <fieldset aria-labelledby="entry-details">
-                <legend id="entry-details">Blog Entry Details</legend>
-                <div>
+    <form action="/entries/<%= entry._id %>?_method=PUT" method="POST">
+        <fieldset class="entry-details" aria-labelledby="entry-details">
+            <legend id="entry-details">Blog Entry Details</legend>
+            <div>
                 <Label for="title">Title: </Label>
-                <input type="text" name="title" id="title" value="<%= entry.title %>"required />
-                </div>
+                <input type="text" name="title" id="title" value="<%= entry.title %>" required />
+            </div>
 
-                <div>
+            <div>
                 <label for="date">Date: </label>
-                <input type="datetime-local" name="date" id="date" value="<%= entry.date.toISOString().slice(0,16) %>" required />
-                </div>
+                <input type="datetime-local" name="date" id="date" value="<%= entry.date.toISOString().slice(0,16) %>"
+                    required />
+            </div>
 
-                <div>
+            <div>
                 <label for="mood">Mood: </label>
                 <select name="mood" id="mood" required>
-                    <option value="😊" <%=entry.mood === "😊" ? "selected" : "" %>>😊</option>
-                    <option value="😢" <%=entry.mood === "😢" ? "selected" : "" %>>😢</option>
-                    <option value="😡" <%=entry.mood === "😡" ? "selected" : "" %>>😡</option>
-                    <option value="😞" <%=entry.mood === "😞" ? "selected" : "" %>>😞</option>
-                    <option value="😞" <%=entry.mood === "😞" ? "selected" : "" %>>😵</option>
+                    <option value="😊" <%=entry.mood==="😊" ? "selected" : "" %>>😊</option>
+                    <option value="😢" <%=entry.mood==="😢" ? "selected" : "" %>>😢</option>
+                    <option value="😡" <%=entry.mood==="😡" ? "selected" : "" %>>😡</option>
+                    <option value="😞" <%=entry.mood==="😞" ? "selected" : "" %>>😞</option>
+                    <option value="😞" <%=entry.mood==="😞" ? "selected" : "" %>>😵</option>
                 </select>
-                </div>
-            </fieldset>
-
+            </div>
+        </fieldset>
+        <div class="content-box">
             <fieldset aria-labelledby="content">
                 <legend id="content">Blog Content</legend>
                 <div>
-                    <label for="content">Content: </label>
+                    <label for="content">Content: </label><br>
                     <textarea name="content" id="content" rows="10" required><%= entry.content %></textarea>
                 </div>
             </fieldset>
 
             <button type="submit">Submit</button>
-        </form>
+        </div>
+    </form>
     </div>
 </body>
 

@@ -17,9 +17,8 @@
             </li>
         </ul>
     </nav>
-    <div>
-        <form action="/entries" method="POST">
-            <fieldset aria-labelledby="entry-details">
+        <form class="entry-details" action="/entries" method="POST">
+            <fieldset class="entry-details" aria-labelledby="entry-details">
                 <legend id="entry-details">Blog Entry Details</legend>
                 <div>
                 <Label for="title">Title: </Label>
@@ -42,7 +41,7 @@
                 </select>
                 </div>
             </fieldset>
-
+            <div class="content-box">
             <fieldset aria-labelledby="content">
                 <legend id="content">Blog Content</legend>
                 <div>
@@ -50,7 +49,7 @@
                     <textarea name="content" id="content" rows="10" required></textarea>
                 </div>
             </fieldset>
-
+        </div>
             <button type="submit">Submit</button>
         </form>
     </div>

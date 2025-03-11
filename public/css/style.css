@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Darumadrop+One&family=Rochester&family=Single+Day&display=swap');
 
 body {
-    background: #97a4f0;
+    /* background: #97a4f0; */
+    background-image: url("/images/background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     font-family: "Single Day", sans-serif;
     display: flex;
     font-size: 30px;
@@ -11,12 +15,14 @@ body {
     max-width: 100%;
     color: rgb(6, 30, 93);
     text-align: center;
+    min-height: 100vh
+    
 }
 
 
 input:invalid,
 textarea:invalid {
-    border: 1px solid red;
+    border: 1px solid rgb(255, 0, 0);
 }
 
 form {
@@ -27,9 +33,9 @@ form {
     align-items: flex-start;
     background-color: #d2bdf2;
     padding: 20px 30px;
-    border: dashed rgb(113, 158, 255) 3px;
+    border: dashed rgb(29, 73, 166) 3px;
     border-radius: 10px;
-    box-shadow: 5px 6px #ffffff;
+    box-shadow: 5px 6px #6e34a3;
     margin: 20px 10px;
 }
 
@@ -45,23 +51,21 @@ button {
 }
 
 
-
+.delete-form {
+    padding: 0;
+    box-shadow: 0 0;
+    background-color: transparent;
+    height: 50px;
+    margin: 0 20px 0 0;
+    min-height: 100%;
+    border: none;
+}
 textarea {
     width: 100%;
     /* Makes it take the full width of its container */
     font-size: 15px;
     /* Increases the text size for better readability */
-    padding: 10px;
-    /* Adds space inside the textarea */
-    /* resize: vertical; Allows users to resize only vertically */
-}
 
-a:hover,
-button:hover {
-    box-shadow: 1px 1px 35px rgb(247, 153, 229);
-    /* Purple glow */
-    transform: scale(1.10);
-    text-shadow: 0 0 30px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.953), 10px 10px 30px rgb(253, 253, 253);
 }
 
 
@@ -71,5 +75,41 @@ a {
 
 li {
     list-style: none;
+}
+
+
+a:hover,
+button:hover {
+    box-shadow: 10px 10px 35px rgb(247, 153, 229);
+    transform: scale(1.10);
+    text-shadow: 0 0 35px rgba(255, 255, 255, 1), 0 0 35px rgba(255, 255, 255, 0.953), 10px 10px 3px rgb(253, 253, 253);
+    cursor: pointer;
+}
+
+
+.entry-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.entry-display {
+    background-color: rgb(217, 220, 227);
+    border-radius: 10px;
+    border: dashed rgb(113, 158, 255) 3px;
+}
+
+.content-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* stretch to the whole form's width */
+}
+
+.auth-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 

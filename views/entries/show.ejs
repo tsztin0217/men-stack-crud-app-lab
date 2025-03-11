@@ -21,6 +21,7 @@
             </li>
         </ul>
     </nav>
+    <div class="entry-display">
         <article>
             <p><strong>Date: </strong>
                 <%= entry.date %>
@@ -29,7 +30,8 @@
             </p>
             <%= entry.content %>
         </article>
-    <form action="/entries/<%= entry._id%>?_method=DELETE" method="POST">
+    </div>
+    <form class="delete-form" action="/entries/<%= entry._id%>?_method=DELETE" method="POST">
         <button type="submit">Delete <%= entry.title %></button>
     </form>
     <a href="/entries/<%= entry._id%>/edit">Edit Entry</a>
