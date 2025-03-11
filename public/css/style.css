@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Darumadrop+One&family=Rochester&family=Single+Day&display=swap');
 
 body {
-    /* background: #97a4f0; */
     background-image: url("/images/background.jpg");
     background-size: cover;
     background-position: center;
@@ -13,10 +12,9 @@ body {
     align-items: center;
     justify-content: center;
     max-width: 100%;
-    color: rgb(6, 30, 93);
+    color: rgb(11, 41, 116);
     text-align: center;
     min-height: 100vh
-    
 }
 
 
@@ -50,6 +48,9 @@ button {
     width: 15em;
 }
 
+a:active {
+    color: rgb(142, 109, 201);
+}
 
 .delete-form {
     padding: 0;
@@ -71,6 +72,7 @@ textarea {
 
 a {
     text-decoration: none;
+    color: rgb(82, 82, 178)
 }
 
 li {
@@ -96,9 +98,9 @@ button:hover {
 
 
 .entry-display {
-    background-color: rgb(217, 220, 227);
+    background-color: rgba(234, 236, 183, 0.5);
     border-radius: 10px;
-    border: dashed rgb(113, 158, 255) 3px;
+    border: dashed rgb(214, 165, 217) 4px;
 }
 
 .content-box {
