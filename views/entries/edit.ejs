@@ -41,12 +41,15 @@
                     <option value="😞" <%=entry.mood==="😞" ? "selected" : "" %>>😵</option>
                 </select>
             </div>
-            <label>Select Categories:</label><br>
+            <div>
+                <label>Select Categories:</label><br>
 
-            <input type="checkbox" name="categories" value="Tech" <% if (entry.categories) { %>checked<% } %>> Tech
-            <input type="checkbox" name="categories" value="Lifestyle" <% if (entry.categories)  { %>checked<% } %>> Lifestyle
-            <input type="checkbox" name="categories" value="Travel" <% if (entry.categories)  { %>checked<% } %>> Travel
-
+                <input type="checkbox" name="categories" value="Tech" <% if (entry.categories) { %>checked<% } %>> Tech
+                    <input type="checkbox" name="categories" value="Lifestyle" <% if (entry.categories) { %>checked<% }
+                        %>> Lifestyle
+                        <input type="checkbox" name="categories" value="Travel" <% if (entry.categories) { %>checked<% }
+                            %>> Travel
+            </div>
         </fieldset>
         <div class="content-box">
             <fieldset aria-labelledby="content">
@@ -55,7 +58,7 @@
                     <label for="content">Content: </label>
                     <textarea name="content" id="content" rows="10" required><%= entry.content %></textarea>
                 </div>
-               
+
             </fieldset>
 
             <button type="submit">Submit</button>
