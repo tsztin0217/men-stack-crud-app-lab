@@ -43,7 +43,7 @@ app.get("/", async (req, res) => {
 })
 
 app.use("/auth", authController);
-
+app.use(isSignedIn, authController);
 
 app.get("/entries",isSignedIn, async (req, res) => {
     const allEntries = await Entry.find();
@@ -53,11 +53,11 @@ app.get("/entries",isSignedIn, async (req, res) => {
     );
 });
 
-app.get("/entries/new", isSignedIn, (req, res) => {
+app.get("/entries/new",  (req, res) => {
     res.render("entries/new.ejs");
 });
 
-app.post("/entries", isSignedIn, async (req, res) => {
+app.post("/entries",  async (req, res) => {
     console.log(req.body);
     let categories = req.body.categories || []; // Get selected checkboxes
 
@@ -71,24 +71,24 @@ app.post("/entries", isSignedIn, async (req, res) => {
     res.redirect("/entries");
 });
 
-app.get("/entries/:entryId/edit",isSignedIn, async (req, res) => {
+app.get("/entries/:entryId/edit", async (req, res) => {
     const foundEntry = await Entry.findById(req.params.entryId);
     res.render("entries/edit.ejs", {
         entry: foundEntry
     });
 });
 
-app.put("/entries/:entryId", isSignedIn, async (req, res) => {
+app.put("/entries/:entryId",  async (req, res) => {
     await Entry.findByIdAndUpdate(req.params.entryId, req.body);
     res.redirect(`/entries/${req.params.entryId}`);
 })
 
-app.get("/entries/:entryId", isSignedIn, async (req, res) => {
+app.get("/entries/:entryId",  async (req, res) => {
     const foundEntry = await Entry.findById(req.params.entryId);
     res.render("entries/show.ejs", { entry: foundEntry });
 });
 
-app.delete("/entries/:entryId", isSignedIn, async (req, res) => {
+app.delete("/entries/:entryId",  async (req, res) => {
     await Entry.findByIdAndDelete(req.params.entryId);
     res.redirect("/entries");
 });
