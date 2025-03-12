@@ -53,7 +53,7 @@ app.get("/entries", async (req, res) => {
     );
 });
 
-app.get("/entries/new", (req, res) => {
+app.get("/entries/new", isSignedIn, (req, res) => {
     res.render("entries/new.ejs");
 });
 
